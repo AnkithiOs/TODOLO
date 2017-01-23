@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ha7-Ep-r3b">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="vfC-m3-p27">
+            <objects>
+                <tableViewController id="uTX-UY-v9y" customClass="ViewController" customModule="RealmTODOLO" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FFU-cq-Gwi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="x3T-2K-a3V">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" rowHeight="80" id="ZOx-iY-ckj" customClass="TvTaskCell" customModule="RealmTODOLO" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZOx-iY-ckj" id="nay-HK-qB2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAH-3N-4LH">
+                                            <rect key="frame" x="321" y="24" width="30" height="30"/>
+                                            <state key="normal" title="Edit"/>
+                                            <connections>
+                                                <action selector="editAction:" destination="ZOx-iY-ckj" eventType="touchUpInside" id="EzW-Yz-fh5"/>
+                                            </connections>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="an1-jf-gn9">
+                                            <rect key="frame" x="298" y="31.5" width="15" height="15"/>
+                                            <color key="backgroundColor" red="0.96022169499999999" green="0.40216025550000001" blue="0.075003007799999993" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="SQM-hS-TfF"/>
+                                                <constraint firstAttribute="width" constant="15" id="cB5-H3-OAQ"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <real key="value" value="7.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="7.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="OAH-3N-4LH" firstAttribute="leading" secondItem="an1-jf-gn9" secondAttribute="trailing" constant="8" id="4Sh-J8-mdp"/>
+                                        <constraint firstItem="OAH-3N-4LH" firstAttribute="centerY" secondItem="nay-HK-qB2" secondAttribute="centerY" id="7xw-Ha-wE6"/>
+                                        <constraint firstItem="an1-jf-gn9" firstAttribute="centerY" secondItem="OAH-3N-4LH" secondAttribute="centerY" id="HXg-dj-1aQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="OAH-3N-4LH" secondAttribute="trailing" constant="16" id="mtG-b4-gFf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="priorityIndicator" destination="an1-jf-gn9" id="NTo-RM-oTf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uTX-UY-v9y" id="n1e-ZM-O2A"/>
+                            <outlet property="delegate" destination="uTX-UY-v9y" id="ExR-c1-KSv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="V5k-kG-dQQ"/>
+                    <connections>
+                        <outlet property="searchBar" destination="x3T-2K-a3V" id="ZtR-Lq-p0m"/>
+                        <outlet property="tableView" destination="FFU-cq-Gwi" id="M0w-gw-O1t"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="27X-Cs-O0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1608.8" y="-58.020989505247378"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ca8-Gu-9HQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ha7-Ep-r3b" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tJP-D5-Zox">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uTX-UY-v9y" kind="relationship" relationship="rootViewController" id="PNr-4d-8tK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0d-9Z-n3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669.60000000000002" y="-58.020989505247378"/>
+        </scene>
+    </scenes>
+</document>
