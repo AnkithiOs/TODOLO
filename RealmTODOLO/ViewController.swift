@@ -189,11 +189,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    
         search(text: searchText)
-    
-    
-        
         if(filteredItems.count == 0){
             searchActive = false;
         } else {
@@ -214,13 +210,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             filteredItems = items
         }
     }// test commit
-    
-    
 }
 
 @objc protocol TvTaskCellDelegate {
     @objc optional func cellDidClickEdit(cell: TvTaskCell)
-    
 }
 
 class TvTaskCell: UITableViewCell{
